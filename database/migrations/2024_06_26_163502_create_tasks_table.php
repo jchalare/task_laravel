@@ -18,10 +18,7 @@ return new class extends Migration
             $table->enum('status', ['pending', 'in_progress', 'completed'])->default('pending');
             $table->datetime('due_date');
             $table->timestamps();
-
-            $table->softDeletesTz($column = 'deleted_at', $precision = 0);
-
-
+            $table->softDeletes();
         });
     }
 
